@@ -16,5 +16,6 @@
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
 
-Algorithm.py linguist-vendored
-*.py linguist-vendored
+Algorithm.py    linguist-vendored
+Algorithm.ipynb linguist-vendored
+        *.py    linguist-vendored
