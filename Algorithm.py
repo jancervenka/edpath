@@ -8,7 +8,8 @@ y = np.array([1, 7, 5,  8])
 
 plt.plot(x[ : : 2], y[ : : 2], linestyle = '--', color = 'black')
 plt.plot(x[2  :  ], y[2  :  ], linestyle = '--', color = 'black')
-plt.plot(x[:  : 3], y[ : : 3],  linestyle = '--', color = 'red')
+plt.plot( [1, 6  ],  [1, 4.9], linestyle = '--', color = 'green')
+plt.plot( [6, 10 ],  [4.9, 8], linestyle = '--', color = 'red')
 plt.scatter(x, y, c = 'black', zorder = 99)
 plt.scatter([5, 8], [2, 3], c = 'black', zorder = 99)
 plt.scatter([6], [4.9], c = 'red')
@@ -31,13 +32,9 @@ plt.annotate('Target', xy = (10, 7.8), xytext = (9, 5),
              arrowprops=dict(facecolor = 'black', arrowstyle = "->",
              connectionstyle = "arc3"))
 
-plt.annotate('', xy = (1.2, 0.9), xytext = (6.3, 4.7),
-             arrowprops=dict(facecolor = 'black', arrowstyle = "<->",
-             connectionstyle = "arc3"))
-
-plt.text(3.8, 3.1, 'Jump range', rotation = 35)
+plt.text(3.3, 3.1, 'Jump range', rotation = 37)
 plt.axis('off')
-plt.savefig('EDPath.png')
-plt.savefig('EDPath.pdf')
+plt.savefig('Algorithm.png')
+plt.savefig('Algorithm.pdf')
 
 plt.rcParams['figure.figsize'] = (6, 4)
