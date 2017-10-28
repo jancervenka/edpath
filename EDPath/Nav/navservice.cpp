@@ -103,7 +103,7 @@ int navservice::find_path(string start, string target, float jumprng)
 		
 		if (it_next == stars->end())
 		{
-			report << "ERROR: No reachable star found. Jump range too low." << endl;
+			report << "ERROR: No reachable star found." << endl;
 			path->clear();
 			delete path;
 			return -1;
@@ -156,6 +156,7 @@ vector<star>::iterator navservice::find_nearest_star(const point *loc, const flo
 	{
 		dist = get_dist(loc, it->get_position());
 		if (dist < mindist && dist <= jumprng && get_dist(it->get_position(), itc->get_position()) <= jumprng)
+		//if (dist < mindist && get_dist(it->get_position(), itc->get_position()) <= jumprng)
 		{
 			minit = it;
 			mindist = dist;
@@ -167,9 +168,21 @@ vector<star>::iterator navservice::find_nearest_star(const point *loc, const flo
 
 bool navservice::path_convergence()
 {
-	/* If the path gets to the edge of the Bubble, the next endpoint of the navigation vector
-	   will be outside the Bubble. This means that the closest star found by the find_nearest_path()
-	   will be the current star.
+	/* The path might get to the point where the next endpoint of the navigation vector is outside the Bubble. 
+	   This means that there is no star satysfing all the conditions (1) in the find_nearest_path() (the only 
+	   viable star is the current one and it cannot be reached because of the dist < jumprng condition). The 
+	   program then exits with the "No reachable star found" error. 
+	   
+	   If we remove the condition, the algorithm will stay in the current star forever, the program will exit 
+	   with the "Distance to target does not converge" error after the convergence threshhold (100) is reached.
+
+	   (1) Why?
+	   If the navigation endpoint is in the "deep space void", the closest star (mindist) is the current one.
+	   There is probably some issue with comparison and arithmetics of floats meaning that dist <= jumprng
+	   returns false (dist is the distance between the current star and navigation endpoint).
+
+	   There might be cases where the navigation vector has a narrow anggle with the edge of the Bubble; the
+	   program then might exit via the convergence threshold. (Santos Dumont -> Sol)
 	*/
 
 
@@ -182,10 +195,9 @@ bool navservice::path_convergence()
 
 	for (itp = path->begin() + 1; itp != path->end(); ++itp)
 	{
-		if (itp->get_dtt() - (itp - 1)->get_dtt() <= 0.0)
+		if (itp->get_dtt() - (itp - 1)->get_dtt() >= 0.0)
 			diffc++;
 	}
-
 
 	if (diffc > 100)
 		return false;
