@@ -34,7 +34,7 @@ plt.annotate('Target', xy = (10, 7.8), xytext = (9, 5),
 
 plt.text(3.3, 3.1, 'Jump range', rotation = 37)
 plt.axis('off')
-plt.savefig('Algorithm.png')
+plt.savefig('Algorithm.png', dpi = 300)
 plt.savefig('Algorithm.pdf')
 
 plt.rcParams['figure.figsize'] = (6, 4)
