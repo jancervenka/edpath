@@ -8,6 +8,6 @@ EDPath.exe <START> <TARGET> <JUMPRANGE>
 ```
 Use underscores instead of spaces in star names.
 
-![Example](https://i.imgur.com/uTtymTz.png)
+![Example](Example.png)
 
-![Algorithm](https://i.imgur.com/Ibgwcws.png)
+![Algorithm](Algorithm.png)
