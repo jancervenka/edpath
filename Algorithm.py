@@ -12,7 +12,7 @@ plt.plot( [1, 6  ],  [1, 4.9], linestyle = '--', color = 'green')
 plt.plot( [6, 10 ],  [4.9, 8], linestyle = '--', color = 'red')
 plt.scatter(x, y, c = 'black', zorder = 99)
 plt.scatter([5, 8], [2, 3], c = 'black', zorder = 99)
-plt.scatter([6], [4.9], c = 'red')
+plt.scatter([6], [4.9], c = 'red', zorder = 99)
 plt.title('EDPath Routing Algorithm')
 #plt.xlabel('x [-]')
 #plt.ylabel('y [-]')
@@ -38,3 +38,8 @@ plt.savefig('Algorithm.png', dpi = 300)
 plt.savefig('Algorithm.pdf')
 
 plt.rcParams['figure.figsize'] = (6, 4)
+
+plt.rcParams['figure.figsize'] = (3, 2)
+plt.savefig('Algorithm2.png', dpi = 100)
+
+
