@@ -15,3 +15,6 @@
 *.PDF	 diff=astextplain
 *.rtf	 diff=astextplain
 *.RTF	 diff=astextplain
+
+Algorithm.html linguist-vendored
+Algorithm.py linguist-vendored
