@@ -9,3 +9,5 @@ EDPath.exe <START> <TARGET> <JUMPRANGE>
 Use underscores instead of spaces in star names.
 
 ![Example](https://i.imgur.com/uTtymTz.png)
+
+![Algorithm](https://i.imgur.com/Ibgwcws.png]
