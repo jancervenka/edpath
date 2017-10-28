@@ -1,7 +1,7 @@
 import numpy as np
 import matplotlib.pyplot as plt
 
-plt.rcParams['figure.figsize'] = (10, 8)
+plt.rcParams['figure.figsize'] = (6, 4)
 
 x = np.array([1, 4, 5, 10])
 y = np.array([1, 7, 5,  8])
