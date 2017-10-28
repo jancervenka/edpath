@@ -10,4 +10,4 @@ Use underscores instead of spaces in star names.
 
 ![Example](Example.png)
 
-![Algorithm](Algorithm.png)
+![Algorithm](Algorithm.png |  width=250)
