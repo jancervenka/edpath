@@ -26,8 +26,8 @@ def create_and_load():
             name = name.replace("'", "''")
 
         x = data[key][0]
-        y = data[key][0]
-        z = data[key][0]
+        y = data[key][1]
+        z = data[key][2]
         q = """INSERT INTO stars (name, x, y, z) 
                VALUES ('{}', {}, {}, {});""".format(name, x, y, z)
         
