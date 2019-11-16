@@ -45,3 +45,10 @@ $RECYCLE.BIN/
 Network Trash Folder
 Temporary Items
 .apdisk
+.vs
+ipch/
+*.ipch
+*.sdf
+*.sln
+EDPath/Release/
+EDPath/Debug/
